@@ -44,6 +44,8 @@ python scripts/check_notebooks.py --include-downloads
 
 The check runs the actual notebook code in order and prints tables and metrics. It closes plots without rendering a browser UI. It verifies execution, not scientific validity or visual layout. Notebooks are committed without saved outputs; rerunning them produces current results.
 
+GitHub checks run the five offline notebooks and then the housing notebook in a separate step. That housing step requires the external dataset download to be available. To run only that notebook locally, use `python scripts/check_notebooks.py --include-downloads --notebook 02`.
+
 ## Concepts explored
 
 - Training error can fall while unseen-data performance worsens.
@@ -58,3 +60,4 @@ The check runs the actual notebook code in order and prints tables and metrics. 
 These are small educational experiments. The tree and ensemble activities reuse test observations for comparisons; their displayed scores are exploratory, not independent final estimates. The classification activities use a public research dataset for ML practice and have no clinical validation or diagnostic use. The dimensionality-reduction publication selects the final representation from training CV rather than keeping a hard-coded choice.
 
 The SVM worksheet, teaching demos, supplied solution notebook, group assignment, course handouts, and restricted local data are omitted. See [ATTRIBUTION.md](ATTRIBUTION.md) for provenance and editorial changes.
+
